@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+     
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+   
+    <head>
+       
+    </head>
+    <body>
+        <f:view>
+       <h:form>
+           <h:outputText id="username" value="#{listaCosasMB.username}"/>
+       
+            <h:outputText value="Número: "/> <h:inputText value="#{indexUsuarioMB.base}"/>
+        <h:outputText value="Resultado: "/> <h:outputText  value="#{indexUsuarioMB.resultado}"/>
+        <h:commandButton  type="submit" value="Calcular" action="#{indexUsuarioMB.factorial()}"/>
+        
+        </h:form>
+            </f:view>
+    </body>
+
+</html>

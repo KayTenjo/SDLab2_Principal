@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <f:view>
+        <html>
+            <head>
+
+                <title>LOGIN</title>
+                <h:outputStylesheet name="css/jsfcrud.css"/>
+            </head>
+            <link rel="stylesheet" type="text/css" href="CSS/style.css"></link>
+            <body>
+
+
+                <h:form id="login_frm">
+                    <h2>Login Please:</h2>
+                    <table width="250" border="0" cellspacing="0" cellpadding="2">
+                        <tr>
+                            <td colspan="2">
+                                <h:message for="username" styleClass="errorMsg"/><br></br>
+                                <h:message for="password" styleClass="errorMsg"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><h:outputText value="Username : "/></td>
+                            <td><h:inputText id="username" value="#{loginMB.username}" required="true" styleClass="input_text"/></td>
+                        </tr>
+                        <tr>
+                            <td><h:outputText value="Password : "/></td>
+                            <td><h:inputSecret id="password" value="#{loginMB.password}" required="true" styleClass="input_secret"/></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="center">
+                                <h:commandButton action="#{loginMB.login()}" value="Login" type="submit"/></td>
+                        </tr>
+                    </table>
+                    <h:commandLink action="crearUsuario.xhtml" value="Nuevo Usuario"/>
+                </h:form>
+
+
+
+                <br />
+               
+            </body>
+
+        </html>
+    </f:view>
+</html>
+
