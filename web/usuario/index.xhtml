@@ -20,7 +20,8 @@ and open the template in the editor.
             <h:outputText value="Número: "/> <h:inputText value="#{indexUsuarioMB.base}"/>
         <h:outputText value="Resultado: "/> <h:outputText  value="#{indexUsuarioMB.resultado}"/>
         <h:commandButton  type="submit" value="Calcular" action="#{indexUsuarioMB.factorial()}"/>
-        
+        <br/>
+        <h:commandLink value="Subir un archivo" action="subirArchivo.xhtml"/>
         </h:form>
             </f:view>
     </body>

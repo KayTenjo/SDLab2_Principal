@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <head>
+        <title>Subir un archivo</title>
+    </head> 
+    <h:body>
+        <h:form enctype="multipart/form-data">  
+            
+            <h:outputText value="Seleccione archivo:"/> <p:fileUpload value="#{subirArchivoMB.archivo}" mode="simple"/>  
+            <br/>
+            <h:outputText value="Nombre del archivo: "/> <p:inputText value="#{subirArchivoMB.nombre_archivo}"/>
+            <br/>
+            <p:commandButton type="submit" value="Subir" ajax="false"  actionListener="#{subirArchivoMB.subir}"/>    
+            
+            
+        </h:form>
+        
+        
+    </h:body>
+</html>
