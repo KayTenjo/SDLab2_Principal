@@ -7,23 +7,44 @@ and open the template in the editor.
 <html xmlns="http://www.w3.org/1999/xhtml"
      
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html">
-   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <f:view> 
+        <html>   
     <head>
-       
+       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+       <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen" type="text/css"/> 
     </head>
     <body>
-        <f:view>
-       <h:form>
-           <h:outputText id="username" value="#{listaCosasMB.username}"/>
+        <script src="http://code.jquery.com/jquery.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
        
-            <h:outputText value="Número: "/> <h:inputText value="#{indexUsuarioMB.base}"/>
-        <h:outputText value="Resultado: "/> <h:outputText  value="#{indexUsuarioMB.resultado}"/>
-        <h:commandButton  type="submit" value="Calcular" action="#{indexUsuarioMB.factorial()}"/>
-        <br/>
+        <div class="col-md-2 col-md-offset-5">
+            <h:form>  
+                <p:dataTable var="files" value="#{indexUsuarioMB.listaArchivos}" styleClass="table  table-striped ">  
+                    <p:column headerText="Nombre de Archivo">  
+                <h:outputText value="#{files.nombre_virtual}" />  
+            </p:column>  
+
+                    <p:column  headerText="Descargar">  
+            
+              
+                <h:outputLink id="link1" value="#{files.url}">
+                <h:outputText value="Descargar" />
+                 </h:outputLink>  
+                    
+            </p:column>  
+
+        </p:dataTable>  
+</h:form>  
+            
+       <h:form>
+           
         <h:commandLink value="Subir un archivo" action="subirArchivo.xhtml"/>
         </h:form>
-            </f:view>
+        </div>
     </body>
-
+            
+</html> 
+        </f:view>
 </html>

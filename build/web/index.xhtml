@@ -2,45 +2,65 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core">
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
     <f:view>
         <html>
             <head>
 
-                <title>LOGIN</title>
-                <h:outputStylesheet name="css/jsfcrud.css"/>
+                <title>Login Wega</title>
+                 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen" type="text/css"/>  
             </head>
-            <link rel="stylesheet" type="text/css" href="CSS/style.css"></link>
+          
             <body>
+                <script src="http://code.jquery.com/jquery.js"></script>
+                <script src="bootstrap/js/bootstrap.min.js"></script>
+                <div class="row">
+                
+                <div class="col-md-2 col-md-offset-5">
 
-
-                <h:form id="login_frm">
+                <h:form class="form-singin" >
                     <h2>Login Please:</h2>
-                    <table width="250" border="0" cellspacing="0" cellpadding="2">
-                        <tr>
-                            <td colspan="2">
-                                <h:message for="username" styleClass="errorMsg"/><br></br>
-                                <h:message for="password" styleClass="errorMsg"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><h:outputText value="Username : "/></td>
-                            <td><h:inputText id="username" value="#{loginMB.username}" required="true" styleClass="input_text"/></td>
-                        </tr>
-                        <tr>
-                            <td><h:outputText value="Password : "/></td>
-                            <td><h:inputSecret id="password" value="#{loginMB.password}" required="true" styleClass="input_secret"/></td>
-                        </tr>
-                        <tr>
-                            <td colspan="2" align="center">
-                                <h:commandButton action="#{loginMB.login()}" value="Login" type="submit"/></td>
-                        </tr>
-                    </table>
-                    <h:commandLink action="crearUsuario.xhtml" value="Nuevo Usuario"/>
+            
+                   
+                        <p:outputLabel  
+                                       value="Nombre de Usuario"/>
+                        <p:inputText styleClass="form-control" id="password" autocomplete="on" 
+                                     value="#{loginMB.username}" />
+                        
+                        <p:outputLabel  
+                                       value="Ingrese contraseña"/>
+                        <p:inputText  id="username" autocomplete="on" 
+                                      value="#{loginMB.password}" type="password"  styleClass=" form-control " />
+                   
+                       <!-- <h:outputText value="Username : "/>
+                        <td><h:inputText id="username" value="#{loginMB.username}" required="true" styleClass="input_text" /></td>
+
+
+
+                        <h:outputText value="Password : "/>
+                        <h:inputSecret id="password" value="#{loginMB.password}" required="true" styleClass="input_secret"/>
+                        
+                        
+                        <h:commandButton action="#{loginMB.login()}" value="Login" type="submit" /> !-->
+                       
+                       <br/>
+                        <p:commandButton action="#{loginMB.login()}" value="Entrar" type="submit" styleClass="btn btn-lg btn-primary btn-block" />
+
+                     <br/>   
+                      
                 </h:form>
-
-
-
+                    
+                    
+                   <h:form>
+                    <h:commandLink action="crearUsuario.xhtml" value="Nuevo Usuario"/>
+                    </h:form>
+                  
+                    </div>
+               
+                     
+                    </div> 
                 <br />
                
             </body>

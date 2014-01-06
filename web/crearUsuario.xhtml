@@ -15,12 +15,16 @@ and open the template in the editor.
         <br/>
         <h:outputText value="Contraseña: " /> <h:inputSecret value="#{crearUsuarioMB.password}" required="true"/>
         <br/>
-        <h:commandButton action="#{crearUsuarioMB.crearUsuario()}" value="Login" type="submit"/>
+        <h:commandButton action="#{crearUsuarioMB.crearUsuario()}" value="Crear usuario" type="submit"/>
              <br/>
             <h:outputText value="#{crearUsuarioMB.mensaje}" />
         
         
         
         </h:form>
+        <h:form>
+         <h:commandLink action="index.xhtml" value="Volver a inicio de sesión"/>
+         
+         </h:form>
     </body>
 </html>
